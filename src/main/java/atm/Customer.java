@@ -1,20 +1,24 @@
 package atm;
 
 /**
-   A bank customer with a checking and a savings account.
-*/
-public class Customer
-{  
+ * A bank customer with a checking and a savings account.
+ */
+public class Customer {
+
+   private int customerNumber;
+   private int pin;
+   private Account account;
+
    /**
-      Constructs a customer with a given number and PIN.
-      @param aNumber the customer number
-      @param aPin the personal identification number
-   */
-   public Customer(int aNumber, int aPin, double currentBalance)
-   {  
-      customerNumber = aNumber;
-      pin = aPin;
-      account = new Account(currentBalance);
+    * Constructs a customer with a given number and PIN.
+    * @param customerNumber the customer number
+    * @param pin the personal identification number
+    * @param initialBalance initial balance for account
+    */
+   public Customer(int customerNumber, int pin, double initialBalance) {
+      this.customerNumber = customerNumber;
+      this.pin = pin;
+      this.account = new Account(initialBalance);
    }
    
    public int getCustomerNumber() {
@@ -22,27 +26,20 @@ public class Customer
    }
    
    /** 
-      Tests if this customer matches a customer number 
-      and PIN.
-      @param aNumber a customer number
-      @param aPin a personal identification number
-      @return true if the customer number and PIN match
-   */
-   public boolean match(int aPin)
-   {  
-      return pin == aPin;
+    * Tests if this customer matches a customer number
+    * and PIN.
+    * @param inputPin a personal identification number
+    * @return true if the customer number and PIN match
+    */
+   public boolean match(int inputPin) {
+      return pin == inputPin;
    }
       
    /** 
-      Gets the account of this customer.
-      @return the account
-   */
-   public Account getAccount()
-   {  
+    * Gets the account of this customer.
+    * @return the account
+    */
+   public Account getAccount() {
       return account;
    }
-   
-   private int customerNumber;
-   private int pin;
-   private Account account;
 }
