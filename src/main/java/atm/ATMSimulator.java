@@ -9,19 +9,17 @@ import java.util.Scanner;
 public class ATMSimulator {
 
 	private ATM atm;
-	private Bank bank;
 
 	public ATMSimulator() {
-		bank = new Bank();
-		atm = new ATM(bank);
+		atm = new ATM();
 	}
 
 	public void run() {
 		try {
-			bank.readCustomers("customers.txt");
+			atm.init();
 		}
 		catch(IOException e) {
-			System.out.println("Error opening accounts file.");
+			System.out.println("Error reading account data.");
 			return;
 		}
 

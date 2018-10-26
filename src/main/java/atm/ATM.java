@@ -1,5 +1,7 @@
 package atm;
 
+import java.io.IOException;
+
 /**
  * An ATM that accesses a bank.
  */
@@ -14,14 +16,17 @@ public class ATM {
 	private Bank bank;
 
 	/**
-     * Constructs an ATM for a given bank.
-     * @param bank the bank to which this ATM connects
+     * Constructs an ATM for a bank.
 	 */
-	public ATM(Bank bank) {
-		this.bank = bank;
+	public ATM() {
+		this.bank = new Bank();
 		this.customerNumber = -1;
 		this.currentAccount = null;
 		this.state = START;
+	}
+
+	public void init() throws IOException {
+		bank.initializeCustomers();
 	}
 
 	/**
