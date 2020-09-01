@@ -2,7 +2,6 @@ package atm;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,10 +9,6 @@ import java.util.Scanner;
 public class DataSourceFile {
 
     private String filename;
-
-    public DataSourceFile() {
-        this("customers.txt");
-    }
 
     /**
      * @param filename the name of the customer file
