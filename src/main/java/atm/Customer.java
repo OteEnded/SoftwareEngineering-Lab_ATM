@@ -5,33 +5,47 @@ package atm;
  */
 public class Customer {
 
-   private int customerNumber;
+   private int id;
+   private String name;
    private int pin;
-   private Account account;
+   private BankAccount account;
 
    /**
     * Constructs a customer with a given number and PIN.
-    * @param customerNumber the customer number
+    * @param id the customer number
+    * @param name the customer name
     * @param pin the personal identification number
-    * @param initialBalance initial balance for account
     */
-   public Customer(int customerNumber, int pin, double initialBalance) {
-      this.customerNumber = customerNumber;
+   public Customer(int id, String name, int pin) {
+      this.id = id;
+      this.name = name;
       this.pin = pin;
-      this.account = new Account(initialBalance);
+      this.account = new BankAccount(id, name);
    }
-   
-   public int getCustomerNumber() {
-	   return customerNumber;
+
+
+   public Customer(int id, String name, int pin, double initialBalance) {
+      this.id = id;
+      this.name = name;
+      this.pin = pin;
+      this.account = new BankAccount(id, name, initialBalance);
    }
-   
-   /** 
+
+   public String getName() {
+      return name;
+   }
+
+   public int getId() {
+	   return id;
+   }
+
+   /**
     * Tests if this customer matches a customer number
     * and PIN.
     * @param inputPin a personal identification number
     * @return true if the customer number and PIN match
     */
-   public boolean match(int inputPin) {
+   public boolean checkPin(int inputPin) {
       return pin == inputPin;
    }
       
@@ -39,7 +53,7 @@ public class Customer {
     * Gets the account of this customer.
     * @return the account
     */
-   public Account getAccount() {
+   public BankAccount getAccount() {
       return account;
    }
 }
