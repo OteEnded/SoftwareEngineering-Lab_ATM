@@ -24,19 +24,19 @@ public class Bank {
 
    /**
     * Adds a customer to the bank.
-    * @param c the customer to add
+    * @param customer the customer to add
     */
-   public void addCustomer(Customer c) {
-      customers.put(c.getId(), c);
+   public void registerCustomer(Customer customer) {
+      customers.put(customer.getId(), customer);
    }
    
    /** 
     * Finds a customer in the bank.
-    * @param number a customer number
+    * @param id a customer id
     * @return the matching customer, or null if no customer
     * matches
     */
-   public Customer findCustomer(int number) {
-	  return customers.get(number);
+   public Customer findCustomer(int id) {
+	  return customers.get(id);
    }
 }
