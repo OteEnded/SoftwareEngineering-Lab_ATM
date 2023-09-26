@@ -10,8 +10,8 @@ public class ATM {
 	/**
      * Constructs an ATM for a bank.
 	 */
-	public ATM() {
-		this.bank = new Bank("My Bank");
+	public ATM(Bank bank) {
+		this.bank = bank;
 		this.loginCustomer = null;
 	}
 

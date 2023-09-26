@@ -3,11 +3,12 @@ package atm;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataSourceDB {
+public class DataSourceDB implements DataSource {
 
     /**
      * Simulate reading customer information from database
      */
+    @Override
     public Map<Integer,Customer> readCustomers() {
         Map<Integer,Customer> customers = new HashMap<>();
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class DataSourceFile {
+public class DataSourceFile implements DataSource {
 
     private String filename;
 
@@ -21,6 +21,7 @@ public class DataSourceFile {
      * Reads the customer numbers and pins
      * and initializes the bank accounts.
      */
+    @Override
     public Map<Integer,Customer> readCustomers() {
 
         Map<Integer,Customer> customers = new HashMap<>();
